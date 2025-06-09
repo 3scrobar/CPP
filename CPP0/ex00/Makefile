@@ -3,37 +3,48 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tle-saut <tle-saut@student.42perpignan.    +#+  +:+       +#+         #
+#    By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/05/27 15:41:31 by tle-saut          #+#    #+#              #
-#    Updated: 2025/05/27 15:48:49 by tle-saut         ###   ########.fr        #
+#    Created: 2025/06/09 14:59:22 by tle-saut          #+#    #+#              #
+#    Updated: 2025/06/09 14:59:26 by tle-saut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test
 
-CC = c++
+NAME		= megaphone
 
-CFLAGS = -Wall -Werror -Wextra
+CXX			= c++
+CXXFLAGS	= -Wall -Werror -Wextra -std=c++98 -g -Iinclude
 
-SRC = $(wildcard *.cpp)
+SRC_DIR		= src
+OBJ_DIR		= obj
 
-OBJ = $(SRC:.cpp=.o)
+SRC			= $(wildcard $(SRC_DIR)/*.cpp)
+OBJ			= $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC))
+
+ARGS ?=
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	@$(CXX) $(CXXFLAGS) -o $@ $(OBJ)
 
-%.o: %.cpp
-	@$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
+run: all
+	@echo "Running: ./$(NAME) $(ARGS)"
+	@./$(NAME) $(ARGS)
 
 clean:
-	rm -f $(OBJ)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re run
