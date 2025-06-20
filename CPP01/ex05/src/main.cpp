@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 13:57:37 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/06/20 15:25:00 by tle-saut         ###   ########.fr       */
+/*   Created: 2025/06/20 16:25:38 by tle-saut          #+#    #+#             */
+/*   Updated: 2025/06/20 16:54:31 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "../header/Harl.hpp"
 #include <iostream>
 
-class Weapon {
+int main() {
+	Harl harl;
 
-	private:
-		std::string _type;
+	std::cout << "=== Niveau DEBUG ===" << std::endl;
+	harl.complain("DEBUG");
 
-	public:
+	std::cout << "\n=== Niveau INFO ===" << std::endl;
+	harl.complain("INFO");
 
-		Weapon(std::string type);
-		~Weapon();
+	std::cout << "\n=== Niveau WARNING ===" << std::endl;
+	harl.complain("WARNING");
 
-		std::string	get_type(void) const;
-		void	setType(std::string name);
-		
-};
+	std::cout << "\n=== Niveau ERROR ===" << std::endl;
+	harl.complain("ERROR");
+
+	return 0;
+}
 

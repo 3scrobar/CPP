@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tle-saut <tle-saut@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:57:39 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/06/18 15:12:14 by tle-saut         ###   ########.fr       */
+/*   Updated: 2025/06/20 15:34:46 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@ HumanA::HumanA(const std::string& name, Weapon& weapons) : _name(name), weapons(
 };
 
 HumanA::~HumanA(void) {
-	std::cout << "\033[033m"<< this->_name << " go to sleep before the next warn\033[0m" << std::endl;
+	std::cout << "\033[033m\n"<< this->_name << " go to sleep before the next warn\n\n\n\033[0m" << std::endl;
 };
 
 void	HumanA::attack(void) const{
 	std::cout << "\n\033[033m"<< this->_name << "\033[033m Has see something and go for have a look" << std::endl;
 	std::cout << this->_name << " see a zombie and go to attack it" << std::endl;
-	std::cout << this->_name << " attack with ";
-	weapons.get_type();
-	std::cout << "and run away very fast \033[0m" << std::endl;
+	std::cout << this->_name << " attack with \033[0m'" << weapons.get_type();
+	std::cout << "'\033[033m and run away very fast \033[0m" << std::endl;
 }

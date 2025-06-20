@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 13:57:37 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/06/20 15:25:00 by tle-saut         ###   ########.fr       */
+/*   Created: 2025/06/20 16:25:38 by tle-saut          #+#    #+#             */
+/*   Updated: 2025/06/20 16:33:51 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "../header/Harl.hpp"
 #include <iostream>
+#include <string>
 
-class Weapon {
+std::string to_upper(std::string str) {
+	for (size_t i = 0; i < str.length(); i++) {
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = str[i] - 32;
+	}
+	return str;
+}
 
-	private:
-		std::string _type;
+int main(int ac, char **av) {
+	if (ac != 2) {
+		std::cerr << "Error: you need to enter a complain level" << std::endl;
+		return 1;
+	}
 
-	public:
+	Harl harl;
+	std::string arg = to_upper(av[1]);
+	harl.complain(arg);
 
-		Weapon(std::string type);
-		~Weapon();
-
-		std::string	get_type(void) const;
-		void	setType(std::string name);
-		
-};
-
+	return 0;
+}
