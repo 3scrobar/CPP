@@ -6,7 +6,7 @@
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 22:48:48 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/07/01 16:47:36 by tle-saut         ###   ########.fr       */
+/*   Updated: 2025/07/01 16:46:24 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,26 @@ Fixed &Fixed::operator=(const Fixed &src)
 	return *this;
 }
 
+float Fixed::operator+(Fixed nbr2)
+{
+	return (this->toFloat() + nbr2.toFloat());
+}
+
+float Fixed::operator-(Fixed nbr2)
+{
+	return (this->toFloat() - nbr2.toFloat());
+}
+
+float Fixed::operator*(Fixed nbr2)
+{
+	return (this->toFloat() * nbr2.toFloat());
+}
+
+float Fixed::operator/(Fixed nbr2)
+{
+	return (this->toFloat() / nbr2.toFloat());
+}
+
 
 /*****************************Funbctions***************************************/
 float	Fixed::toFloat(void)const
@@ -80,7 +100,7 @@ void	Fixed::setRawBits(int const raw)
 	this->_fp_value = raw;
 }
 
-
+/************************************Functions non membre********************/
 
 std::ostream	&operator<<(std::ostream &o, Fixed const &fixed)
 {

@@ -6,7 +6,7 @@
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 22:47:43 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/07/01 16:47:56 by tle-saut         ###   ########.fr       */
+/*   Updated: 2025/07/01 16:43:05 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ class Fixed
 		~Fixed();
 
 		Fixed &operator=(const Fixed &src);
+		
+		float operator+(Fixed nbr2);
+		float operator-(Fixed nbr2);
+		float operator*(Fixed nbr2);
+		float operator/(Fixed nbr2);
 
 		float toFloat(void)const;
 		int toInt(void)const;
