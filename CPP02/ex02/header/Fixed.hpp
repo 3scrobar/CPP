@@ -6,7 +6,7 @@
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 22:47:43 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/07/01 16:43:05 by tle-saut         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:32:17 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,24 @@ class Fixed
 		float operator*(Fixed nbr2);
 		float operator/(Fixed nbr2);
 
+		Fixed operator++();
+		Fixed operator--();
+		Fixed operator++(int);
+		Fixed operator--(int);
+
+		static Fixed &max(Fixed &first, Fixed &second);
+		static const Fixed &max(const Fixed &first, const Fixed &second);
+		static Fixed &min(Fixed &first, Fixed &second);
+		static const Fixed &min(const Fixed &first, const Fixed &second);
+
+		bool operator>(Fixed nbr2) const;
+		bool operator<(Fixed nbr2) const;
+		bool operator>=(Fixed nbr2) const;
+		bool operator<=(Fixed nbr2) const;
+		bool operator==(Fixed nbr2) const;
+		bool operator!=(Fixed nbr2) const;
+		
+		
 		float toFloat(void)const;
 		int toInt(void)const;
 		

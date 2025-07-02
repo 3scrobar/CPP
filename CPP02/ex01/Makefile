@@ -6,7 +6,7 @@
 #    By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/09 14:59:22 by tle-saut          #+#    #+#              #
-#    Updated: 2025/06/27 16:25:19 by tle-saut         ###   ########.fr        #
+#    Updated: 2025/07/02 19:53:18 by tle-saut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 run: all
-	@echo "Running: ./$(NAME) $(ARGS)"
+	@echo "Running: ./$(NAME) $(ARGS) \n\n\n"
 	@./$(NAME) $(ARGS)
 
 clean:

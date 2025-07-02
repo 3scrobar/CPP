@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tle-saut <tle-saut@student.42perpignan.    +#+  +:+       +#+         #
+#    By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/09 14:59:22 by tle-saut          #+#    #+#              #
-#    Updated: 2025/06/18 12:10:01 by tle-saut         ###   ########.fr        #
+#    Updated: 2025/07/02 19:43:48 by tle-saut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME		= zombie
+NAME		= Fixed
 
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98 -g -Iinclude

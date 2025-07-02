@@ -6,7 +6,7 @@
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 22:48:48 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/07/01 16:47:36 by tle-saut         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:52:37 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,38 +18,38 @@ const int Fixed::_fract_bits = 8;
 //****************************Constructeur************************************/
 Fixed::Fixed(): _fp_value(0)
 {
-	std::cout << "Fixed Default Constructor called" << std::endl;
+	std::cout << "Default Constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int input)
 {
-	std::cout << "Fixed Int Constructor called" << std::endl;
+	std::cout << "Int Constructor called" << std::endl;
 	this->_fp_value = input << this->_fract_bits;
 }
 
 Fixed::Fixed(const float input)
 {
-	std::cout << "Fixed Float Constructor called" << std::endl;
+	std::cout << "Float Constructor called" << std::endl;
 	this->_fp_value = roundf(input * (1 << this->_fract_bits));
 }
 
 Fixed::Fixed(const Fixed &copy)
 {
-	std::cout << "Fixed Copy Constructor called" << std::endl;
+	std::cout << "Copy Constructor called" << std::endl;
 	*this = copy;
 }
 /***************************Destructeur****************************************/
 
 Fixed::~Fixed()
 {
-	std::cout << "Fixed Deconstructor called" << std::endl;
+	std::cout << "Deconstructor called" << std::endl;
 }
 
 /****************************Operator******************************************/
 
 Fixed &Fixed::operator=(const Fixed &src)
 {
-	std::cout << "Fixed Assignation operator called" << std::endl;
+	std::cout << "Assignation operator called" << std::endl;
 	if (this != &src)
 		this->_fp_value = src.getRawBits();
 
