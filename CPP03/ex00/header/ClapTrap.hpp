@@ -5,31 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/02 20:02:51 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/07/02 20:14:27 by tle-saut         ###   ########.fr       */
+/*   Created: 2025/07/15 14:22:05 by tle-saut          #+#    #+#             */
+/*   Updated: 2025/07/15 15:58:19 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
 #include <iostream>
 
-class ClapTrap
+class Claptrap
 {
-	public:
-	
-		ClapTrap(std::string name);
-		~ClapTrap();
-		
+	public :
+
+		Claptrap();
+		Claptrap(std::string name, int hp, int energy, int damage);
+		~Claptrap();
+
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-
-	private:
+		int getHp(void);
+		void recharge(void);
+		int	getStatus(void);
+		
+	private :
 	
-		long int _HitPoint;
-		long int _AttackDamage;
-		long int _Energy;
 		std::string _name;
-	
+		int _HitPoint;
+		int _Energy;
+		int _Damage;
+		int _HpMax;
+		int _EnergyMax;
+		int _Dead;
 };
