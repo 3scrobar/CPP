@@ -6,19 +6,19 @@
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:37:36 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/07/31 15:48:52 by tle-saut         ###   ########.fr       */
+/*   Updated: 2025/08/04 14:26:36 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
 	std::cout << "Constructeur du chat par default appeler";
 	this->_type = "Cat";
 }
 
-Cat::Cat(const Cat &cpy)
+Cat::Cat(const Cat &cpy) : Animal()
 {
 	std::cout << "Constructeur de Cat par copie appeler" << std::endl;
 	*this = cpy;
@@ -38,7 +38,7 @@ Cat &Cat::operator=(const Cat &cpy)
 	return (*this);
 }
 
-void Cat::MakeSound(void)const
+void Cat::makeSound(void)const
 {
 	std::cout << this->getType() << " fait **Meooowwwww** " << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:16:07 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/07/31 15:31:29 by tle-saut         ###   ########.fr       */
+/*   Updated: 2025/07/31 16:12:22 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ std::string Animal::getType(void)const
 	return (this->_type);
 }
 
-void Animal::MakeSound(void)const
+void Animal::makeSound(void)const
 {
 	std::cout << "Cet animal ne produit aucun son." << std::endl;
 }

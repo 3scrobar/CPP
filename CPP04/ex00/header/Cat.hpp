@@ -6,7 +6,7 @@
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:32:08 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/07/31 15:37:15 by tle-saut         ###   ########.fr       */
+/*   Updated: 2025/07/31 16:12:37 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ class Cat : public Animal
 
 		Cat &operator=(const Cat &src);
 		
-		void MakeSound(void)const;
+		void makeSound(void)const;
 		
 };
