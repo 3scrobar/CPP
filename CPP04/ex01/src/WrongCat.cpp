@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 17:24:03 by tblaase           #+#    #+#             */
-/*   Updated: 2025/09/11 13:48:52 by tle-saut         ###   ########.fr       */
+/*   Created: 2022/03/30 10:38:12 by tblaase           #+#    #+#             */
+/*   Updated: 2025/09/11 13:45:37 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Animal.hpp"
+#include "../include/WrongCat.hpp"
 
 // Constructors
-Animal::Animal():_type("default")
+WrongCat::WrongCat(): WrongAnimal()
 {
-	std::cout << "Animal Default Constructor called" << std::endl;
+	this->_type = "WrongCat";
+	std::cout << "WrongCat Default Constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &copy)
+WrongCat::WrongCat(const WrongCat &copy): WrongAnimal()
 {
-	std::cout << "Animal Copy Constructor called" << std::endl;
+	std::cout << "WrongCat Copy Constructor called" << std::endl;
 	*this = copy;
 }
 
 // Deconstructors
-Animal::~Animal()
+WrongCat::~WrongCat()
 {
-	std::cout << "Animal Deconstructor called" << std::endl;
+	std::cout << "WrongCat Deconstructor called" << std::endl;
 }
 
 // Overloaded Operators
-Animal &Animal::operator=(const Animal &src)
+WrongCat &WrongCat::operator=(const WrongCat &src)
 {
-	std::cout << "Animal Assignation operator called" << std::endl;
+	std::cout << "WrongCat Assignation operator called" << std::endl;
 	if (this == &src)
 		return *this;
 
@@ -42,15 +43,11 @@ Animal &Animal::operator=(const Animal &src)
 }
 
 // Public Methods
-void Animal::makeSound(void)const
+void WrongCat::makeSound(void)const
 {
-	std::cout << "This animal doesn't make any sound." << std::endl;
+	std::cout << this->getType() << " says: **WrongCat sounds**" << std::endl;
 }
 
 // Getter
-std::string	Animal::getType(void)const
-{
-	return (this->_type);
-}
 
 // Setter

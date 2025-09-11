@@ -5,24 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 14:36:33 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/09/10 10:17:13 by tle-saut         ###   ########.fr       */
+/*   Created: 2022/03/30 10:30:54 by tblaase           #+#    #+#             */
+/*   Updated: 2025/09/11 13:48:47 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Header-protection
 #pragma once
-#include "WrongAnimal.hpp"
 
-class WrongCat : public WrongAnimal
+// Includes
+#include "../include/WrongAnimal.hpp"
+
+// classes
+
+class WrongCat: public WrongAnimal
 {
+	private:
+		// Private Members
+
 	public:
-	
+	// Constructors
 		WrongCat();
-		WrongCat(const WrongCat &cpy);
+		WrongCat(const WrongCat &copy);
+
+	// Deconstructors
 		~WrongCat();
-		
-		WrongCat &operator=(const WrongCat &cpy);
-		
-		std::string getType(void)const;
-		void makeSound()const;
+
+	// Overloaded Operators
+		WrongCat &operator=(const WrongCat &src);
+
+	// Public Methods
+		void makeSound(void)const;
+	// Getter
+
+	// Setter
+
 };

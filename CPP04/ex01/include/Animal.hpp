@@ -3,30 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
+/*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 15:15:49 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/08/04 14:30:25 by tle-saut         ###   ########.fr       */
+/*   Created: 2022/03/29 17:24:26 by tblaase           #+#    #+#             */
+/*   Updated: 2022/03/30 16:08:14 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Header-protection
 #pragma once
 
+// Includes
+#include <string>
 #include <iostream>
+#include <cstdio>
+#include <cstdlib>
+
+// classes
 
 class Animal
 {
-	public:
-		Animal();
-		Animal(const Animal& other);
-		virtual ~Animal();
-
-		
-		Animal& operator=(const Animal& other);
-	
-		virtual void makeSound(void)const;
-		std::string getType(void)const;
-		
 	protected:
 		std::string _type;
+
+	public:
+	// Constructors
+		Animal();
+		Animal(const Animal &copy);
+
+	// Deconstructors
+		virtual ~Animal();
+
+	// Overloaded Operators
+		Animal &operator=(const Animal &src);
+
+	// Public Methods
+		virtual void makeSound(void)const;
+	// Getter
+		std::string getType(void)const;
+	// Setter
+
 };
+

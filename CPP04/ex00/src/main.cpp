@@ -5,20 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 16:10:25 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/09/10 10:22:35 by tle-saut         ###   ########.fr       */
+/*   Created: 2022/03/30 09:47:42 by tblaase           #+#    #+#             */
+/*   Updated: 2025/09/11 13:49:05 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/Animal.hpp"
-#include "../header/Dog.hpp"
-#include "../header/Cat.hpp"
-#include "../header/WrongAnimal.hpp"
-#include "../header/WrongCat.hpp"
+#include "../include/Animal.hpp"
+#include "../include/Cat.hpp"
+#include "../include/Dog.hpp"
+#include "../include/WrongAnimal.hpp"
+#include "../include/WrongCat.hpp"
 
 int main()
 {
-	std::cout << "--------------------Animal----------------------------" << std::endl;
 	std::cout << "\033[34mConstructing\033[0m" << std::endl;
 	const Animal	*meta = new Animal();
 	std::cout << std::endl;
@@ -32,7 +31,7 @@ int main()
 	delete meta;
 	std::cout << std::endl;
 
-	std::cout << "-------------------------Cat----------------------------" << std::endl;
+	std::cout << "-------------------------------------------------------" << std::endl;
 
 	std::cout << std::endl;
 	std::cout << "\033[34mConstructing\033[0m" << std::endl;
@@ -48,7 +47,7 @@ int main()
 	delete catto;
 	std::cout << std::endl;
 
-	std::cout << "----------------------Dog------------------------------" << std::endl;
+	std::cout << "-------------------------------------------------------" << std::endl;
 
 	std::cout << std::endl;
 	std::cout << "\033[34mConstructing\033[0m" << std::endl;
@@ -62,7 +61,7 @@ int main()
 	delete doggo;
 	std::cout << std::endl;
 
-	std::cout << "-----------------Wrong Animal---------------------------" << std::endl;
+	std::cout << "-------------------------------------------------------" << std::endl;
 
 	std::cout << std::endl;
 	std::cout << "\033[34mConstructing\033[0m" << std::endl;
@@ -78,7 +77,7 @@ int main()
 	delete wrong_meta;
 	std::cout << std::endl;
 
-	std::cout << "------------------Wrong Cat------------------------" << std::endl;
+	std::cout << "-------------------------------------------------------" << std::endl;
 
 	std::cout << "\033[34mConstructing\033[0m" << std::endl;
 	const WrongAnimal	*wrong_catto = new WrongCat();
@@ -93,7 +92,7 @@ int main()
 	delete wrong_catto;
 	std::cout << std::endl;
 
-	std::cout << "-----------------Wrong Cat------------------------" << std::endl;
+	std::cout << "-------------------------------------------------------" << std::endl;
 
 	std::cout << "\033[34mConstructing\033[0m" << std::endl;
 	const WrongCat	*wrong_catta = new WrongCat();
@@ -110,4 +109,3 @@ int main()
 
 	return (0);
 }
-

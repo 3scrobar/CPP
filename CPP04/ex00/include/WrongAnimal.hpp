@@ -3,29 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
+/*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 14:36:19 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/09/10 10:17:05 by tle-saut         ###   ########.fr       */
+/*   Created: 2022/03/30 10:30:17 by tblaase           #+#    #+#             */
+/*   Updated: 2022/03/31 15:42:58 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Header-protection
 #pragma once
+
+// Includes
+#include <string>
 #include <iostream>
+
+// classes
 
 class WrongAnimal
 {
-	public :
-		WrongAnimal();
-		WrongAnimal(const WrongAnimal &cpy);
-		virtual ~WrongAnimal();
-		
-		WrongAnimal &operator=(const WrongAnimal &src);
-
-		void makeSound(void)const;
-		std::string getType(void)const;
-	
-	protected :
+	protected:
 		std::string _type;
 
+	public:
+	// Constructors
+		WrongAnimal();
+		WrongAnimal(const WrongAnimal &copy);
+
+	// Deconstructors
+		~WrongAnimal();
+
+	// Overloaded Operators
+		WrongAnimal &operator=(const WrongAnimal &src);
+
+	// Public Methods
+		void makeSound(void)const;
+	// Getter
+		std::string getType(void)const;
+	// Setter
+
 };
+

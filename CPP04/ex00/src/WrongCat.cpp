@@ -5,46 +5,49 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 17:20:45 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/09/10 10:20:21 by tle-saut         ###   ########.fr       */
+/*   Created: 2022/03/30 10:38:12 by tblaase           #+#    #+#             */
+/*   Updated: 2025/09/11 13:49:12 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/WrongCat.hpp"
-#include "../header/WrongAnimal.hpp"
+#include "../include/WrongCat.hpp"
 
-WrongCat::WrongCat()
+// Constructors
+WrongCat::WrongCat(): WrongAnimal()
 {
-	std::cout << "Constructeur de WrongCat appeler." << std::endl;
-	this->_type = "Chat d'un type indeterminer.";
+	this->_type = "WrongCat";
+	std::cout << "WrongCat Default Constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &cpy) : WrongAnimal()
+WrongCat::WrongCat(const WrongCat &copy): WrongAnimal()
 {
-	std::cout << "Constructeur de copie pour WrongCat apperler." << std::endl;
-	*this = cpy;
+	std::cout << "WrongCat Copy Constructor called" << std::endl;
+	*this = copy;
 }
 
+// Deconstructors
 WrongCat::~WrongCat()
 {
-	std::cout << "Destructeur pour WrongCat appeler." << std::endl;
+	std::cout << "WrongCat Deconstructor called" << std::endl;
 }
 
-WrongCat &WrongCat::operator=(const WrongCat &cpy)
+// Overloaded Operators
+WrongCat &WrongCat::operator=(const WrongCat &src)
 {
-	std::cout << "Constructeur par assignation de WrongCat appeler." << std::endl;
-	if(this->_type == cpy._type)
-		return (*this);
-	this->_type = cpy._type;
-	return(*this);
+	std::cout << "WrongCat Assignation operator called" << std::endl;
+	if (this == &src)
+		return *this;
+
+	this->_type = src._type;
+	return *this;
 }
 
-std::string WrongCat::getType(void)const
+// Public Methods
+void WrongCat::makeSound(void)const
 {
-	return (this->_type);
+	std::cout << this->getType() << " says: **WrongCat sounds**" << std::endl;
 }
 
-void WrongCat::makeSound()const
-{
-	std::cout << "ce chat bizare aboie comme un cochon" << std::endl;
-}
+// Getter
+
+// Setter

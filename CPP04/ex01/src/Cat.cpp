@@ -6,7 +6,7 @@
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:41:40 by tblaase           #+#    #+#             */
-/*   Updated: 2025/09/11 13:48:55 by tle-saut         ###   ########.fr       */
+/*   Updated: 2025/09/11 13:45:21 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,15 @@
 // Constructors
 Cat::Cat(): Animal()
 {
-	this->_type = "Cat";
 	std::cout << "Cat Default Constructor called" << std::endl;
+	this->_type = "Cat";
+	this->_brain = new Brain();
+	if (this->_brain == NULL)
+	{
+		perror("Cat Brain allocation failed");
+		std::cerr << "Exiting the process now." << std::endl;
+		exit(1);
+	}
 }
 
 Cat::Cat(const Cat &copy): Animal()
@@ -28,6 +35,7 @@ Cat::Cat(const Cat &copy): Animal()
 // Deconstructors
 Cat::~Cat()
 {
+	delete(this->_brain);
 	std::cout << "Cat Deconstructor called" << std::endl;
 }
 
@@ -39,6 +47,14 @@ Cat &Cat::operator=(const Cat &src)
 		return *this;
 
 	this->_type = src._type;
+	this->_brain = new Brain();
+	if (this->_brain == NULL)
+	{
+		perror("Cat Brain allocation failed");
+		std::cerr << "Exiting the process now." << std::endl;
+		exit(1);
+	}
+	*this->_brain = *src._brain;
 	return *this;
 }
 
@@ -49,5 +65,14 @@ void	Cat::makeSound(void)const
 }
 
 // Getter
+void	Cat::getIdeas(void)const
+{
+	for (int i = 0; i < 3; i++)// change the 3 to 100 to show all ideas
+		std::cout << "\tIdea " << i << " of the Cat is: \"" << this->_brain->getIdea(i) << "\" at the address " << this->_brain->getIdeaAddress(i) << std::endl;
+}
 
 // Setter
+void	Cat::setIdea(size_t i, std::string idea)
+{
+		this->_brain->setIdea(i, idea);
+}

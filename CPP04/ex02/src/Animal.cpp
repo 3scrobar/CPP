@@ -6,7 +6,7 @@
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 17:24:03 by tblaase           #+#    #+#             */
-/*   Updated: 2025/09/11 13:48:52 by tle-saut         ###   ########.fr       */
+/*   Updated: 2025/09/11 13:43:01 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ Animal &Animal::operator=(const Animal &src)
 // Public Methods
 void Animal::makeSound(void)const
 {
-	std::cout << "This animal doesn't make any sound." << std::endl;
 }
 
 // Getter
