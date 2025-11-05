@@ -6,7 +6,7 @@
 /*   By: tle-saut <tle-saut@student.42perpignan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 15:42:43 by tle-saut          #+#    #+#             */
-/*   Updated: 2025/06/20 16:15:00 by tle-saut         ###   ########.fr       */
+/*   Updated: 2025/10/24 15:55:18 by tle-saut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,21 @@ int main(int ac, char **av) {
 	std::string to_replace = av[3];
 	std::string line;
 
-	while (std::getline(input_file, line)) {
+	while (std::getline(input_file, line))
+	{
 		std::string result = "";
 		std::size_t i = 0;
 
-		while (i < line.length()) {
+		while (i < line.length())
+		{
 			
-			if (line.substr(i, to_find.length()) == to_find) {
+			if (line.substr(i, to_find.length()) == to_find)
+			{
 				result += to_replace;
 				i += to_find.length();
 			}
-			else {
+			else
+			{
 				result += line[i];
 				i++;
 			}
